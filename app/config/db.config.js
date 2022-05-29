@@ -1,13 +1,15 @@
-const fs=require('fs')
+require('dotenv').config();
 
-const get_host = ()=>{
-  fs.readFile('app/config/cfg','utf-8',(err,data)=>{
-    if(err){
-      console.log(err)
-      return "";
+module.exports = {
+    HOST: "tag",
+    USER: "postgres",
+    PASSWORD: "freshnugget",
+    DB: "awsdb",
+    dialect: "postgres",
+    pool: {
+      max: 5,
+      min: 0,
+      acquire: 30000,
+      idle: 10000
     }
-    return data;
-  })
-}
-
-module.exports = get_host;
+  };

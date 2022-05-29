@@ -1,18 +1,18 @@
 const config = require("../config/db.config.js");
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(
-  "awsdb",
-  "postgres",
-  "freshnugget",
+  config.DB,
+  config.USER,
+  config.PASSWORD,
   {
     host: config.HOST,
-    dialect: "postgres",
+    dialect: config.dialect,
     operatorsAliases: false,
     pool: {
-      max: 5,
-      min: 0,
-      acquire: 30000,
-      idle: 10000
+      max: config.pool.max,
+      min: config.pool.min,
+      acquire: config.pool.acquire,
+      idle: config.pool.idle
     }
   }
 );
