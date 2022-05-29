@@ -6,20 +6,8 @@ const get_host = ()=>{
       console.log(err)
       return "";
     }
-    return data
+    return data;
   })
 }
 
-module.exports = {
-    HOST: get_host(),
-    USER: "postgres",
-    PASSWORD: "freshnugget",
-    DB: "awsdb",
-    dialect: "postgres",
-    pool: {
-      max: 5,
-      min: 0,
-      acquire: 30000,
-      idle: 10000
-    }
-  };
+module.exports = get_host;
