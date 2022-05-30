@@ -1,6 +1,4 @@
 module.exports = {
-    accessKeyId: "ki",
-    secretAccessKey: "ks",
-    region: "rg",
-    bucket:"bk"
+    region: "eu-west-1",
+    bucket:"note-bucket-2022"
   };
